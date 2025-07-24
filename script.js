@@ -62,4 +62,15 @@ document.addEventListener('DOMContentLoaded', () => {
   vatToggle.addEventListener('change', () => {
     updateTotals();
   });
+
+  // Display a message when the payment button is clicked. Since there is no real
+  // payment processing in this demo site, we inform the user that payment is
+  // currently unavailable and instruct them to contact us or use cash on delivery.
+  const payButton = document.getElementById('payment-button');
+  if (payButton) {
+    payButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('Online payment is currently unavailable. Please contact us or choose cash on delivery to complete your order.');
+    });
+  }
 });
